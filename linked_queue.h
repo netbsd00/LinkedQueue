@@ -3,17 +3,9 @@
 
 #include "packet_data_type.h"
 
-typedef struct _note_t
-{
-    void *data;
-    struct _note_t *next;
-} node_t;
-
 typedef struct _linked_queue_t
 {
-	node_t *front;
-	node_t *rear;
-	INT32 count;
+	void *_priv_data;
 
 	void (*f_release_data)(void *);
 	void (*f_push)(struct _linked_queue_t *, void*);
